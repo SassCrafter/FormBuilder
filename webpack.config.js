@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  //entry: './src/js/index.js',
+  devtool: 'source-map',
   entry: ['@babel/polyfill', './src/js/app.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
