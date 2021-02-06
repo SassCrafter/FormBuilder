@@ -1,0 +1,110 @@
+.create-settings {
+	padding: 6rem 0 2rem 0;
+
+	&__options {
+		flex-wrap: wrap;
+		flex-direction: column;
+		@include mq($tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	&__option {
+		width: 100%;
+		height: 10rem;
+		padding: 1rem;
+		//background-color: $card-bg;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 1rem 0;
+		cursor: pointer;
+		transition: transform $t-time ease-in-out;
+
+		@include mq($tablet) {
+			width: 48%;
+			//margin: 2rem;
+		}
+		@include mq($laptop) {
+			flex-direction: column;
+			height: 25rem;
+			width: 30%;
+
+			&:hover {
+				transform: translateY(-1rem);
+				.icon-wrapper {
+					box-shadow: 0 .5rem 1.5rem rgba(0,0,0, .15);
+					border-color: $main-color;
+				}
+				.text-wrapper h3 {
+					color: $main-color;
+				}
+			}
+		}
+	}
+
+	.icon-wrapper {
+		//width: 30%;
+		flex: 2;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $card-bg;
+		@include mq($laptop) {
+			flex: 3;
+			height: 80%;
+			width: 100%;
+			border: 1px solid transparent;
+			position: relative;
+			z-index: 2;
+			transition: border-color $t-time linear, box-shadow $t-time linear;
+		}
+
+		i {
+			font-size: 4rem;
+			color: $text-color-light;
+
+			@include mq($laptop) {
+				font-size: 6rem;
+			}
+
+		}
+	}
+
+	&__icon {
+		width: 4rem;
+
+		@include mq($laptop) {
+			width: 8rem;
+		}
+	}
+
+	.text-wrapper {
+		flex: 5;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		background-color: $card-bg;
+		@include mq($laptop) {
+			width: 100%;
+			flex: 1;
+			background-color: $bg-color;
+			align-items: flex-start;
+			justify-content: center;
+			padding-top: 1rem;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+			font-weight: 400;
+			text-transform: capitalize;
+			@include mq($laptop) {
+				font-size: 1.8rem;
+				font-weight: 600;
+				transition: color $t-time linear;
+			}
+		}
+	}
+}

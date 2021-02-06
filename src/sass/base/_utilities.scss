@@ -1,0 +1,56 @@
+%flex {
+	display: flex;
+	align-items: center;
+}
+
+.flex {
+	@extend %flex;
+
+	&--center {
+		justify-content: center;
+	}
+
+	&--jc-sb {
+		justify-content: space-between;
+	}
+	&--column {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+}
+
+.container {
+	width: 95%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	overflow: hidden;
+}
+
+.wrapper {
+	max-width: 900px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.text {
+	max-width: 40rem;
+	margin-bottom: 2rem;
+	text-align: center;
+	@include mq($tablet) {
+		text-align: left;
+	}
+}
+
+.heading {
+	font-size: 2.2rem;
+	text-transform: capitalize;
+	margin-bottom: 1rem;
+}
+.subheading {
+	font-size: 1.4rem;
+	color: $text-color-light;
+	margin-bottom: 1rem;
+}
